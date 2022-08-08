@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --col-pos: 1rem;
+  --col-w: 1rem;
+  --font-s: .75rem;
+  --bg-x-pos: 0;
+  --animation-speed: 5s;
+  --landscape-bg: url("https://zupimages.net/up/22/31/vqxc.png");
+  --portrait-bg: url('');
+}
+
+body {
+  overflow: hidden;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.container {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  background: #222;
+}
+
+.txt-col {
+  position: absolute;
+  left: var(--col-pos);
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  width: var(--col-w);
+  background: var(--landscape-bg);
+  /* background-size: cover; */
+  background-size: 100vw auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: auto;
+  font-size: var(--font-s);
+  font-weight: 900;
+  -webkit-animation: raining-code var(--animation-speed) linear infinite;
+          animation: raining-code var(--animation-speed) linear infinite;
+}
+.txt-col span {
+  display: inline-block;
+}
+@-webkit-keyframes twinkle {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 0.25;
+  }
+}
+@keyframes twinkle {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 0.25;
+  }
+}
+@-webkit-keyframes raining-code {
+  from {
+    transform: translateY(-100vh);
+    background-position: calc(var(--col-pos) * -1) 100vh;
+  }
+  to {
+    transform: translateY(100vh);
+    background-position: calc(var(--col-pos) * -1) -100vh;
+  }
+}
+@keyframes raining-code {
+  from {
+    transform: translateY(-100vh);
+    background-position: calc(var(--col-pos) * -1) 100vh;
+  }
+  to {
+    transform: translateY(100vh);
+    background-position: calc(var(--col-pos) * -1) -100vh;
+  }
+}/*# sourceMappingURL=style.css.map */
